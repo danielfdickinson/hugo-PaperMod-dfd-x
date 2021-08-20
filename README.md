@@ -1,5 +1,8 @@
 <h1 align=center>Hugo PaperMod | <a href="https://adityatelange.github.io/hugo-PaperMod/" rel="nofollow">Demo</a></h1>
 
+**NB**: This is [Daniel F. Dickinson](https://github.com/danielfdickinson)'s personal fork for experimental use on his own sites. For production use on your sites he recommends that you 
+use the [original (upstream) version by Aditya Telange](https://github.com/adityatelange/hugo-PaperMod.git).
+
 <h4 align=center>☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive</h4>
 <br>
 
