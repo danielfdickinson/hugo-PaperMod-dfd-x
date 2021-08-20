@@ -1,0 +1,12 @@
+.terms-tags li {
+    margin: .625rem;
+}
+
+.terms-tags a {
+    padding: .3125rem .625rem;
+    border-radius: .3125rem;
+}
+
+.terms-tags a:active {
+    transform: scale(0.96);
+}
