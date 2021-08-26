@@ -1,0 +1,40 @@
+@media screen and (max-width: 768px) {
+    /* theme-vars */
+    :root {
+        --gap: .875rem;
+    }
+
+    /* profile-mode */
+    .profile img {
+        transform: scale(0.85);
+    }
+
+    /* post-entry */
+    .first-entry {
+        min-height: 16.25rem;
+    }
+
+    .archive-year {
+        margin-top: 1.25rem;
+    }
+
+    /* footer */
+    .footer {
+        padding: calc((var(--footer-height) - var(--gap) - .625rem) / 2) var(--gap);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* reset */
+    ::-webkit-scrollbar {
+        width: 19px;
+        height: 11px;
+    }
+}
+
+/* footer */
+@media screen and (max-width: 900px) {
+    .list .top-link {
+        transform: translateY(-5rem);
+    }
+}
