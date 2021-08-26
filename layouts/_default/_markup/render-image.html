@@ -1,1 +1,12 @@
+{{- if not (strings.HasPrefix .Destination "http") -}}
+{{- $image := (.Page.Resources.ByType "image").GetMatch .Destination -}}
+{{- if $image }}
+<img loading="lazy" src="{{ $image.RelPermalink | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+{{- else if fileExists (path.Join "/static/" .Destination) }}
+<img loading="lazy" src="{{ path.Join "/static/" .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+{{- else }}
 <img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+{{- end }}
+{{- else }}
+<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+{{- end }}
