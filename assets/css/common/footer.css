@@ -4,11 +4,8 @@
 }
 
 .footer {
+    max-width: 100%;
     text-align: center;
-}
-
-.footer span:last-child {
-    white-space: nowrap;
 }
 
 .footer a {
