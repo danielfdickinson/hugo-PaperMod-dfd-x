@@ -1,0 +1,40 @@
+.contact-form input:focus {
+    border-color: var(--secondary);
+}
+
+.contact-form p {
+    width: 100%;
+}
+
+.contact-form p button {
+    background: var(--tertiary);
+    border: 2px solid var(--secondary);
+    border-radius: var(--radius);
+    color: var(--primary);
+    font-weight: bold;
+    width: 5em;
+}
+
+.contact-form p input {
+    background: var(--tertiary);
+    border: 2px solid var(--secondary);
+    border-radius: var(--radius);
+    color: var(--primary);
+    font-weight: bold;
+    width: 100%;
+}
+
+.contact-form p textarea {
+    background: var(--tertiary);
+    border: 2px solid var(--secondary);
+    border-radius: var(--radius);
+    color: var(--primary);
+    font-weight: bold;
+    height: 10em;
+    width: 100%;
+}
+
+.contact-form p:nth-last-of-type(2) {
+    font-weight: normal;
+    opacity: .3;
+}
