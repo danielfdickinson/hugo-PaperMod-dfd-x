@@ -42,7 +42,7 @@
 
 .entry-content {
     margin: .5rem 0;
-    font-size: .875rem;
+    font-size: 1rem;
     line-height: 1.6;
     -webkit-line-clamp: 2;
 }
@@ -73,9 +73,9 @@
 }
 
 .entry-cover {
-    margin-bottom: var(--gap);
-    margin-top: 1rem;
     height: auto;
+    margin-bottom: var(--gap);
+    text-align: center;
     max-height: 100%;
 }
 
@@ -84,68 +84,69 @@
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    max-height: 50vh;
     max-width: 100%;
     width: auto;
 }
 
 .entry-cover svg {
+    border-radius: var(--radius);
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    max-height: 50vh;
     max-width: 100%;
     width: auto;
 }
 
 .entry-cover ~ .entry-item {
-    width: 100%;
-}
-
-.entry-cover~.entry-item-wrapper {
-    width: 100%;
-}
-
-.entry-cover ~ .entry-footer {
     margin-top: 1rem;
     width: 100%;
+}
+
+.entry-item-wrapper {
+    margin-top: .6rem;
 }
 
 .entry-main {
     margin-top: 1rem;
-    width: 100%;
 }
 
 .entry-cover.entry-cover-thumbnail {
     flex: 1 1 100%;
     height: auto;
-    max-height: inherit;
+    max-height: 100%;
     width: 100%;
 }
 
+.entry-item-wrapper,
+.entry-cover.entry-cover-thumbnail ~ .entry-item-wrapper {
+    flex: 1 1 100%;
+}
+
 @media screen and (min-width: 768px) {
-    .entry-cover.entry-cover-thumbnail {
-        margin-right: .6em;
-        margin-top: 1.3em;
-        width: 15%;
-    }
-
-    .entry-cover.entry-cover-thumbnail ~ .entry-item {
-        width: 80%;
-    }
-
     .entry-main {
-        margin: 0;
-        margin-top: 1rem;
-        min-height: 6rem;
+        max-height: 7rem;
     }
 
     .entry-cover.entry-cover-thumbnail {
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: 6rem;
-        margin: 0;
+        flex: 0 1 auto;
+        margin-bottom: 0;
+        margin-right: .6em;
         max-height: 100%;
+        max-width: 15%;
+    }
+
+    .entry-item-wrapper {
+        flex: 1 0 83%;
+        margin: 0;
+        min-height: unset;
+    }
+
+    .entry-item-wrapper  .entry-item {
+        margin-bottom: 1rem;
+    }
+
+    .entry-cover.entry-cover-thumbnail ~ .entry-item-wrapper {
+        flex: 1 0 83%;
     }
 
     .entry-cover.entry-cover-thumbnail img {
@@ -158,16 +159,10 @@
 
     .entry-cover.entry-cover-thumbnail svg {
         height: auto;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
         max-height: 100%;
         max-width: 100%;
-        width: 100%;
-    }
-    .entry-cover.entry-cover-thumbnail ~ .entry-item-wrapper {
-        flex: 8 0 16rem;
-        margin-left: .8rem;
-        margin-top: 0;
+        width: auto;
     }
 
     .entry-item-wrapper .entry-footer {
