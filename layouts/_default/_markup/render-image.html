@@ -1,6 +1,19 @@
 {{- if not (strings.HasPrefix .Destination "http") -}}
 {{- $image := (.Page.Resources.ByType "image").GetMatch .Destination -}}
 {{- if $image }}
+    {{- with .Page -}}
+        {{- $imageOptions := "" -}}
+        {{- with .Params.convertimagesto -}}
+            {{- $imageOptions = printf "%dx%d %s" $image.Width $image.Height . -}}
+        {{- else -}}
+            {{- with .Site.Params.convertimagesto -}}
+                {{- $imageOptions = printf "%dx%d %s" $image.Width $image.Height . -}}
+            {{- end -}}
+        {{- end -}}
+        {{- if ne $imageOptions "" -}}
+            {{- $image = $image.Resize $imageOptions -}}
+        {{- end -}}
+    {{- end -}}
 <img loading="lazy" src="{{ $image.RelPermalink | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
 {{- else if fileExists (path.Join "/static/" .Destination) }}
 <img loading="lazy" src="{{ path.Join "/static/" .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
