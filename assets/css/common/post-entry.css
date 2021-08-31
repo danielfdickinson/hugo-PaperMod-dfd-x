@@ -78,10 +78,6 @@
     flex-flow: row wrap;
 }
 
-.entry-cover {
-    text-align: center;
-}
-
 .entry-cover ~ .entry-footer {
     display: block;
 }
