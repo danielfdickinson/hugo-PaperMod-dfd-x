@@ -1,12 +1,13 @@
-{{- if not (strings.HasPrefix .Destination "http") -}}
-{{- $image := (.Page.Resources.ByType "image").GetMatch .Destination -}}
+{{- $destination := split .Destination "#" }}
+{{- $image := (.Page.Resources.ByType "image").GetMatch (printf "*%s*" (index $destination 0)) }}
+
 {{- if $image }}
     {{- with .Page -}}
         {{- $imageOptions := "" -}}
-        {{- with .Params.convertimagesto -}}
+        {{- with .Params.convertImagesTo -}}
             {{- $imageOptions = printf "%dx%d %s" $image.Width $image.Height . -}}
         {{- else -}}
-            {{- with .Site.Params.convertimagesto -}}
+            {{- with .Site.Params.convertImagesTo -}}
                 {{- $imageOptions = printf "%dx%d %s" $image.Width $image.Height . -}}
             {{- end -}}
         {{- end -}}
@@ -14,12 +15,10 @@
             {{- $image = $image.Resize $imageOptions -}}
         {{- end -}}
     {{- end -}}
-<img loading="lazy" src="{{ $image.RelPermalink | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
-{{- else if fileExists (path.Join "/static/" .Destination) }}
-<img loading="lazy" src="{{ path.Join "/static/" .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+
+{{- $final_destination := cond (isset $destination 1) (printf "%s#%s" ($image.Permalink) (index $destination 1)) ($image.Permalink) -}}
+
+<img loading="lazy" src="{{ $final_destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
 {{- else }}
 <img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
-{{- end }}
-{{- else }}
-<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
-{{- end }}
+{{- end -}}
