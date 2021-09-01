@@ -18,8 +18,8 @@
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
     {{- with $.Site.Params.images }}
     <image>
-      <url>{{ index . 0 | absURL }}</url>
-      <link>{{ index . 0 | absURL }}</link>
+      <url>{{ index . 0 | relURL }}</url>
+      <link>{{ index . 0 | relURL }}</link>
     </image>
     {{- end }}
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
