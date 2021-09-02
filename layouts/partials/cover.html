@@ -28,7 +28,7 @@
             width="{{ $cover.Width }}" height="{{ $cover.Height }}">
         {{- else if and (eq "svg" $cover.MediaType.SubType) (or (eq $prod true)  (eq $isThumbnail true)) }}
             {{- if $addLink }}<a href="{{ $cover.RelPermalink }}" target="_blank"
-                rel="noopener noreferrer">{{ end -}}
+                rel="noopener noreferrer" title="{{ $alt }}">{{ end -}}
             {{ $cover.Content | safeHTML }}
         {{- else }}{{/* Unprocessable image or responsive images disabled */}}
             {{- if $addLink }}<a href="{{ $cover.RelPermalink }}" target="_blank"
