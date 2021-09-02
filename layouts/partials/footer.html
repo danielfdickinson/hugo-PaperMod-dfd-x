@@ -1,3 +1,4 @@
+{{- if not (.Param "hideFooter") }}
 <footer class="footer">
     {{- if .Site.Copyright }}
     <span>{{ .Site.Copyright | markdownify }}</span>: 
@@ -10,6 +11,7 @@
         <a href="https://github.com/danielfdickinson/hugo-PaperMod-dfd-x" rel="noopener" target="_blank">hugo-PaperMod-dfd-x</a>
     </span>
 </footer>
+{{- end }}
 
 {{- if (not .Site.Params.disableScrollToTop) }}
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
@@ -82,7 +84,7 @@
 </script>
 {{- end }}
 
-{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Site.Params.ShowCodeCopyButtons)) }}
+{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
 <script>
     document.querySelectorAll('pre > code').forEach((codeblock) => {
         const container = codeblock.parentNode.parentNode;
