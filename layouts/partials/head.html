@@ -19,7 +19,7 @@
     {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}" />
 {{- end }}
 {{- $description := "" -}}
-{{- with .Description }}{{ $description = . }}{{- else }}{{- if .IsPage .IsSection }}
+{{- with .Description }}{{ $description = . }}{{- else }}{{- if or .IsPage .IsSection }}
     {{- $description = (.Summary | default (printf "%s - %s" .Title  .Site.Title)) }}{{- else }}
     {{- with .Site.Params.description }}{{ $description = . }}{{- end }}{{- end }}{{- end -}}
 {{- if lt (len $description) 25 -}}
