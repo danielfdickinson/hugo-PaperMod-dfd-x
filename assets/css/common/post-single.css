@@ -11,7 +11,12 @@
     box-shadow: 0 1px 0 var(--secondary);
 }
 
-.post-content {
+.page-footnote {
+    font-style: italic;
+}
+
+.post-content,
+.page-footnote {
     color: var(--content);
 }
 
