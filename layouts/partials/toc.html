@@ -29,7 +29,7 @@
                     {{- $headerLevel := index (findRE "[1-6]" . 1) 0 -}}
                     {{- $headerLevel := len (seq $headerLevel) -}}
 
-                    {{/* get id="xyz" */}}
+                    {{- /* get id="xyz" */ -}}
                     {{- $id := index (findRE "(id=\"(.*?)\")" $header 9) 0 }}
 
                     {{- /* strip id="" to leave xyz, no way to get regex capturing groups in hugo */ -}}
@@ -42,7 +42,7 @@
                     {{- if gt $headerLevel $prevHeaderLevel -}}
                     {{- range seq $prevHeaderLevel (sub $headerLevel 1) -}}
                     <ul>
-                        {{/* the first should not be recorded */}}
+                        {{- /* the first should not be recorded */ -}}
                         {{- if ne $prevHeaderLevel . -}}
                         {{- $.Scratch.Add "bareul" . -}}
                         {{- end -}}
@@ -53,7 +53,7 @@
                         {{- range seq (sub $prevHeaderLevel 1) -1 $headerLevel -}}
                         {{- if in ($.Scratch.Get "bareul") . -}}
                     </ul>
-                    {{/* manually do pop item */}}
+                    {{- /* manually do pop item */ -}}
                     {{- $tmp := $.Scratch.Get "bareul" -}}
                     {{- $.Scratch.Delete "bareul" -}}
                     {{- $.Scratch.Set "bareul" slice}}
@@ -90,4 +90,4 @@
         </div>
     </details>
 </div>
-{{- end }}
+{{- end -}}
