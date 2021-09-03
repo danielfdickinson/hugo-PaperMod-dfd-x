@@ -26,6 +26,15 @@
     font-size: 1rem;
 }
 
+.page-footnote {
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+.post-content + .post-entry {
+    margin-top: 2rem;
+}
+
 .post-content h3,
 .post-content h4,
 .post-content h5,

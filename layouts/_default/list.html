@@ -100,5 +100,11 @@
 {{- end }}
 
 {{- end }}{{/* end profileMode */}}
-
+{{- if .Params.page_footnote }}
+<div class="page-footnote">
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" (.Params.page_footnote | markdownify ) -}}
+  {{- else }}{{ .Params.page_footnote | markdownify }}{{ end }}
+</div>
+{{- end -}}
 {{- end }}{{- /* end main */ -}}
