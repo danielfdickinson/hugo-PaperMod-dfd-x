@@ -42,10 +42,6 @@
     color: var(--secondary);
 }
 
-.entry-isdraft {
-    display: inline;
-}
-
 .entry-cover {
     text-align: center;
 }
