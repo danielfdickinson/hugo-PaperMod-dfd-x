@@ -2,6 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    line-height: var(--header-height);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
 }
 
 .nav a {
@@ -11,6 +15,7 @@
 .logo,
 #menu {
     display: flex;
+    margin: auto var(--gap);
 }
 
 .logo {
@@ -18,13 +23,17 @@
 }
 
 .logo a {
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
 .logo a img {
+    border-radius: 0.375rem;
     display: inline;
-    vertical-align: middle;
+    margin-inline-end: .5rem;
     pointer-events: none;
+    transform: translate(0, -10%);
+    vertical-align: middle;
 }
 
 body.dark #moon {
@@ -34,6 +43,23 @@ body.dark #moon {
 
 body:not(.dark) #sun {
     display: none;
+}
+
+#theme-toggle svg {
+    height: 1.125rem;
+}
+
+button#theme-toggle {
+    font-size: 1.625rem;
+    margin: auto .25rem;
+}
+
+#menu li + li {
+    margin-inline-start: var(--gap);
+}
+
+#menu a {
+    font-size: 1rem;
 }
 
 #menu {
@@ -52,6 +78,7 @@ body:not(.dark) #sun {
 .lang-switch ul,
 .logo-switches {
     display: inline-flex;
+    margin: auto .25rem;
 }
 
 .lang-switch {
@@ -60,7 +87,9 @@ body:not(.dark) #sun {
 }
 
 .lang-switch a {
+    font-size: 1rem;
     font-weight: 500;
+    margin: auto .1825rem;
 }
 
 .logo-switches {

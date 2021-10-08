@@ -1,10 +1,14 @@
 .footer,
 .top-link {
     color: var(--secondary);
+    font-size: .75rem;
 }
 
 .footer {
-    max-width: 100%;
+    line-height: 1.5rem;
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    margin: auto;
+    padding: calc((var(--footer-height) - var(--gap)) / 2) var(--gap);
     text-align: center;
 }
 
@@ -17,12 +21,23 @@
     border-bottom: 1px solid var(--primary);
 }
 
+.footer span {
+    margin-inline-start: .0625rem;
+    margin-inline-end: .0625rem;
+}
+
 .top-link {
-    visibility: hidden;
-    position: fixed;
-    z-index: 99;
     background: var(--tertiary);
+    border-radius: 4rem;
+    bottom: 3.75rem;
+    height: 2.625rem;
+    padding: .75rem;
+    position: fixed;
+    right: 1.875rem;
     transition: visibility 0.5s, opacity 0.8s linear;
+    visibility: hidden;
+    width: 2.625rem;
+    z-index: 99;
 }
 
 .top-link,

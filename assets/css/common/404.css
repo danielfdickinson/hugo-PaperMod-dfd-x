@@ -27,3 +27,10 @@
 .not-found-statement {
     line-height: 2rem;
 }
+
+.not-found {
+    left: 0;
+    right: 0;
+    height: 80%;
+    font-size: 10rem;
+}
