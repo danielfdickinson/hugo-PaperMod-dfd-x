@@ -1,5 +1,7 @@
 <h1 align=center>Hugo PaperMod | <a href="https://adityatelange.github.io/hugo-PaperMod/" rel="nofollow">Demo</a></h1>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2ed6564f-ca02-4282-8fbd-0b79f4226479/deploy-status)](https://app.netlify.com/sites/hugo-papermod-dfd-x/deploys)
+
 **NB**: This is [Daniel F. Dickinson](https://github.com/danielfdickinson)'s personal fork for experimental use on his own sites. For production use on your sites he recommends that you 
 use the [original (upstream) version by Aditya Telange](https://github.com/adityatelange/hugo-PaperMod.git).
 
