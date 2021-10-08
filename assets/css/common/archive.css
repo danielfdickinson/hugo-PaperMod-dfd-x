@@ -1,25 +1,44 @@
+.archive-posts {
+    width: 100%;
+    font-size: 1rem;
+}
+
 .archive-year:not(:last-of-type) {
     border-bottom: 2px solid var(--border);
 }
 
+.archive-year {
+    margin-top: 2.5rem;
+}
+
 .archive-month {
-    display: flex;
     align-items: flex-start;
+    display: flex;
+    padding: .625rem 0;
 }
 
 .archive-month:not(:last-of-type) {
     border-bottom: 1px solid var(--border);
 }
 
+.archive-month-header {
+    margin: 1.5625rem 0;
+    width: 12.5rem;
+}
+
 .archive-entry {
+    margin: .625rem 0;
+    padding: .3125rem;
     position: relative;
 }
 
 .archive-entry-title {
     font-weight: 400;
+    margin: .3125rem 0;
 }
 
 .archive-count,
 .archive-meta {
     color: var(--secondary);
+    font-size: .875rem;
 }

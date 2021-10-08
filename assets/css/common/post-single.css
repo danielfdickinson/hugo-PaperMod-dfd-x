@@ -1,23 +1,83 @@
+.page-header,
+.post-header {
+    margin: 1.5rem auto var(--content-gap) auto;
+}
+
+.post-title {
+    margin-bottom: .125rem;
+    font-size: 2.5rem;
+}
+
+.post-description {
+    margin-top: .625rem;
+    margin-bottom: .3125rem;
+}
+
 .post-meta,
 .breadcrumbs {
     color: var(--secondary);
     display: flex;
     flex-wrap: wrap;
+    font-size: .875rem;
 }
 
 .post-meta .i18n_list li {
     display: inline-flex;
     list-style: none;
     box-shadow: 0 1px 0 var(--secondary);
+    margin: auto .1875rem;
+}
+
+.breadcrumbs a {
+    font-size: 1rem;
 }
 
 .page-footnote {
+    font-size: 1rem;
     font-style: italic;
+    margin-top: 2rem;
 }
 
 .post-content,
 .page-footnote {
     color: var(--content);
+}
+
+.post-content + .post-entry {
+    margin-top: 2rem;
+}
+
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    margin: 1.5rem 0 1rem;
+}
+
+.post-content h1 {
+    margin: 2.5rem auto 2rem;
+    font-size: 2.5rem;
+}
+
+.post-content h2 {
+    margin: 2rem auto 1.5rem;
+    font-size: 2rem;
+}
+
+.post-content h3 {
+    font-size: 1.5rem;
+}
+
+.post-content h4 {
+    font-size: 1rem;
+}
+
+.post-content h5 {
+    font-size: .875rem;
+}
+
+.post-content h6 {
+    font-size: .75rem;
 }
 
 .post-content a,
@@ -26,7 +86,9 @@
 }
 
 .post-content a code {
+    border-radius: 0;
     box-shadow: 0 -1px 0 var(--primary) inset;
+    margin: auto 0;
 }
 
 .post-content del {
@@ -34,21 +96,63 @@
     background: linear-gradient(to right, var(--primary) 100%, transparent 0) 0 50%/1px 1px repeat-x;
 }
 
+.post-content dl,
+.post-content ol,
+.post-content p,
+.post-content figure,
+.post-content ul {
+    margin-bottom: var(--content-gap);
+}
+
+.post-content ol,
+.post-content ul {
+    padding-inline-start: 1.25rem;
+}
+
+.post-content li {
+    margin-top: .3125rem;
+}
+
+.post-content li p {
+    margin-bottom: 0;
+}
+
 .post-content dl {
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 .post-content dt {
     font-weight: 700;
+    width: 25%;
+}
+
+.post-content dd {
+    width: 75%;
+    margin-inline-start: 0;
+    padding-inline-start: .625rem;
+}
+
+.post-content dd ~ dd,
+.post-content dt ~ dt {
+    margin-top: .625rem;
+}
+
+.post-content table {
+    margin-bottom: 2rem;
 }
 
 .post-content table th,
 .post-content table:not(.highlighttable, .highlight table, .gist .highlight) td {
     border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+    min-width: 5rem;
+    padding: .75rem .5rem;
 }
 
 .post-content table th {
+    font-size: .875rem;
     text-align: start;
 }
 
@@ -57,8 +161,23 @@
     background: var(--hljs-bg) !important;
 }
 
+.post-content table:not(.highlighttable) td code:only-child {
+    margin: auto 0;
+}
+
+
 .post-content .highlighttable {
     table-layout: fixed;
+}
+
+.post-content .highlight table {
+    border-radius: var(--radius);
+}
+
+.post-content .highlight:not(table),
+.post-content pre {
+    margin: .625rem auto;
+    border-radius: var(--radius);
 }
 
 .post-content .highlighttable td .highlight pre code::-webkit-scrollbar {
@@ -69,24 +188,67 @@
     background: 0 0 !important;
 }
 
+.post-content li > .highlight {
+    margin-inline-end: 0;
+}
+
+.post-content ul pre {
+    margin-inline-start: calc(var(--gap) * -2);
+}
+
+.post-content .highlight pre {
+    margin: 0;
+}
+
+.post-content .highlighttable td:first-child {
+    width: 2.5rem;
+}
+
+.post-content .highlighttable td .linenodiv {
+    padding-inline-end: 0 !important;
+}
+
+.post-content .highlighttable td .highlight,
+.post-content .highlighttable td .linenodiv pre {
+    margin-bottom: 0;
+}
+
 .post-content code {
     background: var(--code-bg);
+    border-radius: .125rem;
+    font-size: 0.78em;
+    line-height: 1.5;
+    margin: auto .25rem;
+    padding: .25rem .375rem;
 }
 
 .post-content pre code {
-    display: block;
-    color: rgba(255, 255, 255, 0.8);
     background: 0 0;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    margin: auto 0;
+    padding: .625rem;
     overflow-x: auto;
     word-break: break-all;
 }
 
 .post-content blockquote {
     border-inline-start: 3px solid var(--primary);
+    margin: 1.25rem 0;
+    padding: 0 .875rem;
 }
 
 .post-content hr {
     background: var(--tertiary);
+    border-bottom: 0;
+    border-top: 0;
+    height: .125rem;
+    margin: 1.875rem 0;
+}
+
+.post-content iframe {
+    max-width: 100%;
 }
 
 .post-content figure.align-center {
@@ -103,9 +265,30 @@
     font-weight: normal;
 }
 
+.post-content img {
+    border-radius: .25rem;
+    margin: 1rem 0;
+}
+
+.post-content img[src*="#center"] {
+    margin: 1rem auto;
+}
+
+.post-content figure > figcaption {
+    font-size: 1rem;
+    margin: .5rem 0 1rem;
+}
+
+.post-content figure > figcaption > p {
+    font-size: .875rem;
+}
+
 .toc {
-    border: 1px solid var(--border);
     background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin: 0 .125rem 2.5rem .125rem;
+    padding: 0.4em;
 }
 
 .dark .toc {
@@ -114,6 +297,7 @@
 
 .toc details summary {
     cursor: zoom-in;
+    margin-inline-start: 1.25rem;
 }
 
 .toc details[open] summary {
@@ -125,6 +309,11 @@
     font-weight: 500;
 }
 
+.toc .inner {
+    margin: 0 1.25rem;
+    padding: .625rem 1.25rem;
+}
+
 .toc li ul {
     margin-inline-start: var(--gap);
 }
@@ -133,8 +322,14 @@
     outline: 0;
 }
 
+.post-footer {
+    margin-top: 3.5rem;
+}
+
 .post-tags li {
     display: inline-block;
+    margin-bottom: .3125rem;
+    margin-inline-end: .1875rem;
 }
 
 .post-tags a,
@@ -142,12 +337,17 @@
 .paginav {
     background: var(--code-bg);
     border: 1px solid var(--border);
+    border-radius: var(--radius);
 }
 
 .post-tags a {
     display: block;
     color: var(--secondary);
     background: var(--code-bg);
+    font-size: .875rem;
+    line-height: 2.125rem;
+    padding-inline-start: .875rem;
+    padding-inline-end: .875rem;
 }
 
 .post-tags a:hover,
@@ -158,12 +358,28 @@
 .share-buttons {
     display: flex;
     justify-content: center;
+    margin: .875rem 0;
     overflow-x: auto;
+    padding-inline-start: var(--radius);
+}
+
+.share-buttons a {
+    margin-top: .625rem;
+}
+
+.share-buttons a:not(:last-of-type) {
+    margin-inline-end: .75rem;
 }
 
 .share-buttons a svg {
     fill: currentColor;
+    height: 1.875rem;
     transition: transform 0.1s;
+    width: 1.875rem;
+}
+
+.share-buttons svg:active {
+    transform: scale(0.96);
 }
 
 h1:hover .anchor,
@@ -175,6 +391,7 @@ h6:hover .anchor {
     display: inline-flex;
     color: var(--secondary);
     font-weight: 500;
+    margin-inline-start: .5rem;
 }
 
 .post-content :not(table) ::-webkit-scrollbar-thumb {
@@ -203,22 +420,34 @@ h6:hover .anchor {
 .paginav {
     display: flex;
     border-radius: var(--radius);
+    line-height: 1.875rem;
+    margin: .625rem 0;
 }
 
 .paginav a {
     border-radius: var(--radius);
+    padding-inline-start: .875rem;
+    padding-inline-end: .875rem;
 }
 
 .paginav .title {
-    text-transform: uppercase;
     color: var(--secondary);
+    font-size: small;
+    letter-spacing: .0625rem;
+    text-transform: uppercase;
 }
 
 .paginav span:hover:not(.title) {
     box-shadow: 0 1px 0;
 }
 
+.paginav .prev,
 .paginav .next {
+    width: 50%;
+}
+
+.paginav .next {
+    margin-inline-start: auto;
     text-align: right;
 }
 

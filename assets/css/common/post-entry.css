@@ -1,59 +1,127 @@
 .first-entry {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: var(--gap) 0 calc(var(--gap) * 2) 0;
+    min-height: 20rem;
+    position: relative;
 }
 
 .first-entry .entry-header {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.first-entry .entry-header h1 {
+    font-size: 2.125;
+    line-height: 1.3;
+}
+
+.first-entry .entry-content {
+    margin: .875rem 0;
+    font-size: 1rem;
+    -webkit-line-clamp: 3;
+}
+
+.first-entry .entry-footer {
+    font-size: .875rem;
+}
+
+.home-info .entry-content {
+    -webkit-line-clamp: unset;
 }
 
 .post-entry {
-    position: relative;
     background: var(--entry);
-    transition: transform 0.1s;
     border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: var(--gap);
+    padding: var(--gap);
+    position: relative;
+    transition: transform 0.1s;
+}
+
+.post-entry:active {
+    transform: scale(0.96);
 }
 
 .tag-entry .entry-cover {
     display: none;
 }
 
+.entry-header h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
 .entry-content {
     color: var(--secondary);
-    overflow: hidden;
     display: -webkit-box;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: .5rem 0;
+    overflow: hidden;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .entry-footer {
     color: var(--secondary);
+    font-size: .8125rem;
 }
 
 .entry-link {
+    bottom: 0;
+    left: 0;
     position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.page-content,
+.page-footnote {
+    font-size: 1rem;
+}
+
+.page-footnote {
+    margin-top: 1rem;
 }
 
 .entry-cover,
 .entry-isdraft {
     color: var(--secondary);
+    font-size: .875rem;
 }
 
 .entry-cover {
+    height: auto;
+    margin-bottom: var(--gap);
+    max-height: 100%;
     text-align: center;
 }
 
 .entry-cover img {
+    border-radius: var(--radius);
     display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
     pointer-events: none;
+    width: auto;
 }
 
 .entry-cover svg {
+    border-radius: var(--radius);
     display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
     pointer-events: none;
+    width: auto;
 }
 
 .entry-cover a {
@@ -63,6 +131,12 @@
 
 .entry-cover ~ .entry-item {
     display: block;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.entry-item-wrapper {
+    margin-top: .6rem;
 }
 
 .entry-cover~.entry-item-wrapper {
@@ -72,6 +146,7 @@
 .entry-main {
     display: flex;
     flex-flow: row wrap;
+    margin-top: 1rem;
 }
 
 .entry-cover ~ .entry-footer {
@@ -80,27 +155,66 @@
 
 .entry-cover.entry-cover-thumbnail {
     display: block;
+    flex: 1 1 100%;
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+}
+
+.entry-item-wrapper,
+.entry-cover.entry-cover-thumbnail ~ .entry-item-wrapper {
+    flex: 1 1 100%;
 }
 
 @media screen and (min-width: 768px) {
     .entry-main {
         display: flex;
         flex-flow: row nowrap;
+        max-height: 7rem;
     }
 
     .entry-cover.entry-cover-thumbnail {
         display: flex;
+        flex: 0 1 auto;
         flex-flow: column nowrap;
         justify-items: center;
         justify-self: center;
+        margin-bottom: 0;
+        margin-right: .6em;
+        max-height: 100%;
+        max-width: 15%;
+    }
+
+    .entry-item-wrapper {
+        flex: 1 0 83%;
+        margin: 0;
+        min-height: unset;
+    }
+
+    .entry-item-wrapper  .entry-item {
+        margin-bottom: 1rem;
+    }
+
+    .entry-cover.entry-cover-thumbnail ~ .entry-item-wrapper {
+        flex: 1 0 83%;
     }
 
     .entry-cover.entry-cover-thumbnail img {
         display: block;
+        height: auto;
+        margin: auto;
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
     }
 
     .entry-cover.entry-cover-thumbnail svg {
         display: block;
+        height: auto;
+        margin: auto;
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
     }
 
     .entry-item-wrapper,
@@ -114,6 +228,11 @@
 
     .entry-item-wrapper .entry-footer {
         justify-self: end;
+        margin-top: 0;
+    }
+
+    .entry-content {
+        margin: 0;
     }
 
     .entry-footer {
