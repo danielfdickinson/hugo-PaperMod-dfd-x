@@ -8,6 +8,18 @@
     --hljs-bg: rgb(28, 29, 33);
     --code-bg: rgb(245, 245, 245);
     --border: rgb(238, 238, 238);
+    --min-font-size: 16px;
+    --max-font-size: 32px;
+    --body-font-multiplier: 1.125;
+    --body-font-size: 1.125rem;
+    --main-width-in-chars: 55;
+    --gap: 1.5rem;
+    --content-gap: 1.25rem;
+    --nav-width: 95vw;
+    --main-width: 75vw;
+    --header-height: 3.75rem;
+    --footer-height: 3.75rem;
+    --radius: .5rem;
 }
 
 .dark {
