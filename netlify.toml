@@ -53,4 +53,4 @@
     useShortDocType = true
 
 [dev]
-  command = "hugo server -s exampleSite --poll 700ms -b http://localhost:8888/"
+  command = "hugo server -s exampleSite --poll 700ms -b http://localhost:8888/ --port 8000"
