@@ -36,6 +36,7 @@
 {{- partial "home_info.html" . }}
 {{- end -}}
 
+{{- $isThumbnail := (default false (.Param "cover.thumbnailInList")) -}}
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages -}}
 
@@ -50,7 +51,6 @@
 
 <article class="{{ $class }}">
   {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
-  {{- $isThumbnail := (default false (.Param "cover.thumbnailInList")) -}}
   {{- if not $isThumbnail -}}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden "isThumbnail" $isThumbnail ) }}
   <div class="entry-item">
