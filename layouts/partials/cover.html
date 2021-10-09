@@ -1,10 +1,11 @@
 {{- $isThumbnail := .isThumbnail -}}
+{{- $isHidden := .isHidden -}}
 {{- $imageConversion := "" -}}
 {{- with .cxt}}{{/* Apply proper context from dict */}}
 {{- with (.Param "convertImagesTo") -}}
     {{- $imageConversion = print " " . -}}
 {{- end -}}
-{{- if (and .Params.cover.image (not $.isHidden)) }}
+{{- if (and .Params.cover.image (not $isHidden)) }}
 {{- $alt := (.Params.cover.alt | default .Params.cover.caption | plainify) }}
 <figure class="entry-cover{{ if eq $isThumbnail true }} entry-cover-thumbnail{{ end }}">
     {{- $responsiveImages := (.Params.cover.responsiveImages | default .Site.Params.cover.responsiveImages) | default true }}
