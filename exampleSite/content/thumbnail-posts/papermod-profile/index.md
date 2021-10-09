@@ -10,6 +10,7 @@ cover:
      relative: true
      alt: Screenshot of profile mode
      showTagCover: true
+     fitWidth: true
 ---
 
 ![Test of render hook](/papermod-cover.png)
