@@ -9,6 +9,7 @@ cover:
      relative: true
      alt: Screenshot of homeinfo mode
      showTagCover: true
+     fitHeight: true
 ---
 
 ### Intro
