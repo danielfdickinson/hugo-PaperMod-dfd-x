@@ -143,7 +143,7 @@ params:
 
     socialIcons:
         - name: github
-          url: "https://github.com/danielfdicknson/hugo-PaperMod-dfd-x"
+          url: "https://github.com/danielfdickinson/hugo-PaperMod-dfd-x"
         - name: RSS
           url: "index.xml"
 
