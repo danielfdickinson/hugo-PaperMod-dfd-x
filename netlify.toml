@@ -34,7 +34,7 @@
 
     [plugins.inputs]
       checkExternal = false
-      skipPatterns = [ "<link rel=\"alternate\"", "<meta http-equiv=\"refresh\" content=\"0; url=", "<link rel=\"icon\"", "<link rel=\"apple-touch-icon\"" ]
+      skipPatterns = [ "<link rel=\"alternate\"", "<meta http-equiv=\"refresh\" content=\"0; url=", "<link rel=\"icon\"", "<link rel=\"apple-touch-icon\"", "<meta property=\"og:url\"" ]
 
 [[plugins]]
   package = "netlify-plugin-minify-html"
@@ -43,10 +43,10 @@
     collapseBooleanAttributes = true
     decodeEntities = true
     preserveLineBreaks = true
-    removeAttributeQuotes = true
+    removeAttributeQuotes = false
     removeComments = true
     removeEmptyAttributes = true
-    removeOptionalTags = true
+    removeOptionalTags = false
     removeRedundantAttributes = true
     removeScriptTypeAttributes = true
     removeTypeLinkTypeAttributes = true
