@@ -2,7 +2,6 @@
 title: "Features with Homeinfo Cover"
 summary: Test of post list with cover as thumbnail
 date: 2021-01-20
-weight: 1
 tags: ["PaperMod", "cover-thumbnail-test"]
 author: "Aditya Telange"
 cover:

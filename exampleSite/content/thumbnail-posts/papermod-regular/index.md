@@ -2,7 +2,6 @@
 title: "Features with Default Homepage as Cover"
 summary: Test of post list with cover as thumbnail
 date: 2021-01-20
-weight: 3
 aliases: ["/papermod-features"]
 tags: ["PaperMod", "cover-thumbnail-test"]
 author: "Aditya Telange"
