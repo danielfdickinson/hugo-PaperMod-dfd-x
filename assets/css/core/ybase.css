@@ -119,8 +119,7 @@ input, textarea {
     outline-width: 0;
 }
 
-img,
-svg {
-    max-width: 100%;
+img, svg {
     max-height: 50vh;
+    max-width: 100%;
 }
