@@ -38,6 +38,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     margin-bottom: var(--gap);
+    max-height: max-content;
     padding: var(--gap);
     position: relative;
     transition: transform 0.1s;
@@ -49,6 +50,10 @@
 
 .tag-entry .entry-cover:not(.show-tag-cover) {
     display: none;
+}
+
+.entry-header {
+    display: block;
 }
 
 .entry-header h2 {
@@ -96,9 +101,8 @@
 }
 
 .entry-cover {
-    height: auto;
+    margin-top: var(--gap);
     margin-bottom: var(--gap);
-    max-height: 100%;
     text-align: center;
 }
 
@@ -129,105 +133,68 @@
     box-shadow: 0 1px 0 var(--primary);
 }
 
-.entry-cover ~ .entry-item {
-    display: block;
-    margin-top: 1rem;
-    width: 100%;
-}
-
-.entry-item-wrapper {
+.entry-item {
     margin-top: .6rem;
 }
 
-.entry-cover~.entry-item-wrapper {
-    display: block;
-}
-
 .entry-main {
-    display: flex;
-    flex-flow: row wrap;
-    margin-top: 1rem;
-}
-
-.entry-cover ~ .entry-footer {
     display: block;
-}
-
-.entry-cover.entry-cover-thumbnail {
-    display: block;
-    flex: 1 1 100%;
-    height: auto;
-    max-height: 100%;
     width: 100%;
-}
-
-.entry-item-wrapper,
-.entry-cover.entry-cover-thumbnail ~ .entry-item-wrapper {
-    flex: 1 1 100%;
 }
 
 @media screen and (min-width: 768px) {
     .entry-main {
-        display: flex;
-        flex-flow: row nowrap;
-        max-height: 7rem;
+        height: max-content;
     }
 
-    .entry-cover.entry-cover-thumbnail {
-        display: flex;
-        flex: 0 1 auto;
-        flex-flow: column nowrap;
-        justify-items: center;
-        justify-self: center;
-        margin-bottom: 0;
+    .entry-main .entry-cover.entry-cover-thumbnail {
+        display: inline-block;
+        height: 100%;
+        margin-bottom: auto;
         margin-right: .6em;
-        max-height: 100%;
-        max-width: 15%;
+        margin-top: auto;
+        width: 10%;
+        vertical-align: middle;
     }
 
-    .entry-item-wrapper {
-        flex: 1 0 83%;
-        margin: 0;
-        min-height: unset;
+    .entry-main .entry-cover.entry-cover-thumbnail ~ .entry-item {
+        display: inline-block;
+        height: max-content;
+        margin-top: unset;
+        margin-bottom: unset;
+        max-width: 89%;
+        vertical-align: middle;
     }
 
-    .entry-item-wrapper  .entry-item {
-        margin-bottom: 1rem;
+    .entry-main .entry-cover.entry-cover-thumbnail ~ .entry-item .entry-header {
+        margin-top: 0;
+        padding-top: 0;
     }
 
-    .entry-cover.entry-cover-thumbnail ~ .entry-item-wrapper {
-        flex: 1 0 83%;
+    .entry-main .entry-cover.entry-cover-thumbnail ~ .entry-item .entry-header h2 {
+        margin-top: 0;
+        padding-top: 0;
     }
 
-    .entry-cover.entry-cover-thumbnail img {
+    .entry-main .entry-cover.entry-cover-thumbnail img {
         display: block;
         height: auto;
         margin: auto;
-        max-height: 100%;
+        max-height: 3.8rem;
         max-width: 100%;
         width: auto;
     }
 
-    .entry-cover.entry-cover-thumbnail svg {
+    .entry-main .entry-cover.entry-cover-thumbnail svg {
         display: block;
         height: auto;
         margin: auto;
-        max-height: 100%;
+        max-height: 4rem;
         max-width: 100%;
         width: auto;
     }
 
-    .entry-item-wrapper,
-    .entry-cover~.entry-item-wrapper {
-        align-self: stretch;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        justify-items: start;
-    }
-
-    .entry-item-wrapper .entry-footer {
-        justify-self: end;
+    .entry-item .entry-footer {
         margin-top: 0;
     }
 
