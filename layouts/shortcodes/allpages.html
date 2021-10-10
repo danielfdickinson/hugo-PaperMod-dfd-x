@@ -1,9 +1,21 @@
-<ul>
-{{- range site.Pages.ByTitle }}
-<li>
-    <a href="{{ .RelPermalink }}">
-      {{ .Title }}{{ if .Data.Terms }}: taxonomy{{ else if .Data.Singular }}: {{ .Data.Singular }}{{ end }}
-    </a> — <i><time datetime="{{ .PublishDate }}">{{ .PublishDate.Format "Mon, Jan 2, 2006" }}</time></i>
-</li>
-{{- end }}
-</ul>
+{{- $shortcodeCtx := . }}
+{{- with .Page }}
+  {{- $pages := .Site.Pages.ByTitle -}}
+  {{- $isThumbnail := default true (.Params.cover.thumbnailInList | default .Site.Params.cover.thumbnailInList) -}}
+  {{- $isHidden := default false (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) -}}
+  {{- $curPage := . -}}
+  {{- $isHome := .IsHome -}}
+  {{- range $pages -}}
+    {{- if ne $curPage . -}}
+      {{ partial "helpers/post-entries" (
+        dict
+        "Page" $curPage
+        "EntryPage" .
+        "EntryClass" "allpages post-entry"
+        "IsHome" $isHome
+        "IsHidden" $isHidden
+        "IsThumbnail" $isThumbnail
+      ) }}
+    {{- end -}}{{/* end skip same page */}}
+  {{- end }}{{/* end range pages */}}
+{{- end -}}{{/* end shortcode page context */}}

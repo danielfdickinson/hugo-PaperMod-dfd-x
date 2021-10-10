@@ -36,6 +36,8 @@ languages:
                 - name: Thumbnails
                   url: thumbnail-posts/
                   weight: 20
+                - name: All Pages
+                  url: allpages
 
     fr:
         languageName: ":fr:"
@@ -116,6 +118,7 @@ params:
     ShowToc: true
     # comments: false
     images: ["papermod-cover.png"]
+    mainSections: ["posts"]
 
     profileMode:
         enabled: false

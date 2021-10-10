@@ -1,0 +1,34 @@
+{{- $curPage := .Page -}}
+{{- $entryPage := .EntryPage -}}
+{{- $entryClass := .EntryClass -}}
+{{- $isHome := .IsHome -}}
+{{- $isHidden := .IsHidden -}}
+{{- $isThumbnail := .IsThumbnail -}}
+{{ with $entryPage }}
+<article class="{{ $entryClass }}">
+    {{- $isEntryHidden := default $isHidden (.Params.cover.hidden | default .Params.cover.hiddenInList) }}
+    {{- $isEntryThumbnail := (default $isThumbnail (.Params.cover.thumbnailInList | default .Site.Params.cover.thumbnailInList )) -}}
+    <div class="entry-main">
+    {{- partial "cover.html" (dict "cxt" . "IsHome" $isHome "isHidden" $isEntryHidden "isThumbnail" $isEntryThumbnail ) }}
+        <div class="entry-item">
+            <header class="entry-header">
+                <h2>
+    {{- .Title }}
+    {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
+                </h2>
+            </header>
+    {{- if (ne (.Params.hideSummary | default .Site.Params.hideSummary) true) }}
+            <section class="entry-content">
+                <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+            </section>
+    {{- end }}
+    {{- if ne (.Params.hideMeta | default .Site.Params.hideMeata) true }}
+            <footer class="entry-footer">
+        {{- partial "post_meta.html" . -}}
+            </footer>
+    {{- end }}
+        </div>
+    </div>
+    <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .RelPermalink }}"></a>
+</article>
+{{- end }} {{/* end range page (post-entry) */}}
