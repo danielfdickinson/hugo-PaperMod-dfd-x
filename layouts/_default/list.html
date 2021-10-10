@@ -36,48 +36,30 @@
 {{- partial "home_info.html" . }}
 {{- end -}}
 
-{{- $isThumbnail := (default false (.Param "cover.thumbnailInList")) -}}
-{{- $isHidden := default false (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }}
-{{- $term := .Data.Term }}
+{{- $isThumbnail := default false (.Params.cover.thumbnailInList | default .Site.Params.cover.thumbnailInList) -}}
+{{- $isHidden := default false (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) -}}
+{{- $term := .Data.Term -}}
+{{- $curPage := . -}}
+{{- $isHome := $.IsHome -}}
 {{- range $index, $page := $paginator.Pages -}}
+  {{- $class := "post-entry" -}}
+  {{- $user_preferred := or .Site.Params.disableSpecial1stPost .Site.Params.homeInfoParams -}}
+  {{- if (and $isHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) -}}
+      {{- $class = "first-entry" -}}
+  {{- else if $term -}}
+      {{- $class = "post-entry tag-entry" -}}
+  {{- end -}}
 
-{{- $class := "post-entry" -}}
-
-{{- $user_preferred := or .Site.Params.disableSpecial1stPost .Site.Params.homeInfoParams -}}
-{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) -}}
-{{- $class = "first-entry" -}}
-{{- else if $term -}}
-{{- $class = "post-entry tag-entry" -}}
-{{- end -}}
-
-<article class="{{ $class }}">
-  {{- $isEntryHidden := default $isHidden (.Params.cover.hidden | default .Params.cover.hiddenInList) }}
-  {{- $isEntryThumbnail := (default $isThumbnail (.Param "cover.thumbnailInList")) -}}
-  <div class="entry-main">
-  {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isEntryHidden "isThumbnail" $isEntryThumbnail ) }}
-    <div class="entry-item">
-      <header class="entry-header">
-        <h2>
-          {{- .Title }}
-            {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
-        </h2>
-      </header>
-  {{- if (ne (.Param "hideSummary") true) }}
-      <section class="entry-content">
-        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
-      </section>
-  {{- end }}
-  {{- if not (.Param "hideMeta") }}
-      <footer class="entry-footer">
-    {{- partial "post_meta.html" . -}}
-      </footer>
-  {{- end }}
-    </div>
-  </div>
-  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .RelPermalink }}"></a>
-</article>
-{{- end }}
-
+  {{ partial "helpers/post-entries" (
+    dict
+    "Page" $curPage
+    "EntryPage" $page
+    "EntryClass" $class
+    "IsHome" $isHome
+    "IsHidden" $isHidden
+    "IsThumbnail" $isThumbnail
+  ) }}
+{{- end }}{{/* end range pages in paginator */}}
 {{- if gt $paginator.TotalPages 1 }}
 <footer class="page-footer">
   <nav class="pagination">

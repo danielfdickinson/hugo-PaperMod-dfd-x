@@ -1,0 +1,52 @@
+.post-content + .allpages.post-entry {
+    margin-top: unset;
+}
+
+.post-content .allpages h3,
+.post-content .allpages h4,
+.post-content .allpages h5,
+.post-content .allpages h6 {
+    margin: unset;
+}
+
+.post-content .allpages h1 {
+    margin: unset;
+}
+
+.post-content .allpages .entry-header h2 {
+    font-size: 1.5rem;
+    margin: unset;
+}
+
+.post-content .allpages dl,
+.post-content .allpages ol,
+.post-content .allpages p,
+.post-content .allpages figure,
+.post-content .allpages ul {
+    margin-bottom: unset;
+}
+
+.post-content .allpages ol,
+.post-content .allpages ul {
+    padding-inline-start: unset;
+}
+
+.post-content .allpages li {
+    margin-top: unset;
+}
+
+.post-content .allpages img {
+    margin: auto;
+}
+
+.post-content .allpages a {
+    box-shadow: unset;
+}
+
+.post-content .allpages.post-entry {
+    padding: var(--gap);
+}
+
+.post-content .allpages figure {
+    text-align: center;
+}
