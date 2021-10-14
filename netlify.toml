@@ -29,7 +29,7 @@
 
     [plugins.inputs]
       checkExternal = false
-      skipPatterns = [ "<link rel=\"alternate\"", "<meta http-equiv=\"refresh\" content=\"0; url=", "<link rel=\"icon\"", "<link rel=\"apple-touch-icon\"", "<meta property=\"og:url\"" ]
+      skipPatterns = [ "<link rel=\"alternate\"", "<meta http-equiv=\"refresh\" content=\"0; url=", "<link rel=\"icon\"", "<link rel=\"apple-touch-icon\"", "<meta property=\"og:", "<meta property=\"twitter:" ]
 
 [[plugins]]
   package = "netlify-plugin-minify-html"
