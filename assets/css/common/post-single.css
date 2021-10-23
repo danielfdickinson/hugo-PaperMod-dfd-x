@@ -213,6 +213,10 @@
     margin-bottom: 0;
 }
 
+.post-content .highlighttable td .highlight pre code::-webkit-scrollbar {
+    display: none;
+}
+
 .post-content code {
     background: var(--code-bg);
     border-radius: .125rem;
