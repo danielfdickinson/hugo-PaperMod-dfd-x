@@ -15,6 +15,14 @@ The [demo](https://adityatelange.github.io/hugo-PaperMod/) includes a lot of doc
 
 **ExampleSite** can be found here: [exampleSite](https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite). Demo is built up with [exampleSite](https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite) as source.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/26a044e2-9f44-4ec3-8d09-0fb64c8e5c1c/deploy-status)](https://app.netlify.com/sites/dfd-adityatelange-hugo-papermod/deploys)
+
+---
+
+<p align="center">
+  <kbd><img src="https://user-images.githubusercontent.com/21258296/114303440-bfc0ae80-9aeb-11eb-8cfa-48a4bb385a6d.png" alt="Mockup image" title="Mockup"/></kbd>
+</p>
+
 ---
 
 ## Features/Mods 💥
