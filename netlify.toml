@@ -3,7 +3,7 @@
   command = "hugo"
 
 [build.environment]
-  HUGO_VERSION = "0.88.1"
+  HUGO_VERSION = "0.89.1"
   TZ = "America/Toronto"
   HUGO_MODULE_REPLACEMENTS = "github.com/danielfdickinson/hugo-PaperMod-dfd-x -> ../../../repo"
   GIT_LFS_ENABLED = "1"
