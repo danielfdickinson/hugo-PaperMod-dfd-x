@@ -22,7 +22,7 @@
                 <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
             </section>
     {{- end }}
-    {{- if ne (.Params.hideMeta | default .Site.Params.hideMeata) true }}
+    {{- if ne (.Params.hideMeta | default .Site.Params.hideMeta) true }}
             <footer class="entry-footer">
         {{- partial "post_meta.html" . -}}
             </footer>

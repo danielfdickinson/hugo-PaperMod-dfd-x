@@ -38,17 +38,19 @@
 
 {{- $isThumbnail := default false (.Params.cover.thumbnailInList | default .Site.Params.cover.thumbnailInList) -}}
 {{- $isHidden := default false (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) -}}
-{{- $term := .Data.Term -}}
+{{- $term := .Data.Term }}
 {{- $curPage := . -}}
 {{- $isHome := $.IsHome -}}
 {{- range $index, $page := $paginator.Pages -}}
-  {{- $class := "post-entry" -}}
-  {{- $user_preferred := or .Site.Params.disableSpecial1stPost .Site.Params.homeInfoParams -}}
-  {{- if (and $isHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) -}}
-      {{- $class = "first-entry" -}}
-  {{- else if $term -}}
-      {{- $class = "post-entry tag-entry" -}}
-  {{- end -}}
+
+{{- $class := "post-entry" -}}
+
+{{- $user_preferred := or .Site.Params.disableSpecial1stPost .Site.Params.homeInfoParams -}}
+{{- if (and $isHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) -}}
+{{- $class = "first-entry" -}}
+{{- else if $term -}}
+{{- $class = "post-entry tag-entry" -}}
+{{- end -}}
 
   {{ partial "helpers/post-entries" (
     dict

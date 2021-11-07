@@ -176,7 +176,7 @@ params:
     #     hiddenInList: true # hide on list pages and home
     #     hiddenInSingle: true # hide on single page
     #     thumbnailInList: false # display cover images as thumbnails on post list pages
-    #     showTagCover: false # display cover iamges / thumbnails in terms page listings
+    #     showTagCover: false # display cover images / thumbnails in terms page listings
 
     # fuseOpts:
     #     isCaseSensitive: false

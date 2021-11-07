@@ -12,25 +12,6 @@ cover:
      showTagCover: true
 ---
 
-![Test of render hook](/papermod-cover.png)
-### Intro
-
--   **We'll be using `yml/yaml` format for all examples down below, I recommend using `yml` over `toml` as it is easier to read.**
-
--   You can find any [YML to TOML](https://www.google.com/search?q=yml+to+toml) converters if necessary.
-
----
-
-### Assets (js/css)
-
-The following is enabled by default
-
--   [minification](https://gohugo.io/hugo-pipes/minification/) - makes the assets size smallest as possible.
--   [bundling](https://gohugo.io/hugo-pipes/bundling/) - bundles all the styles in one single asset
--   [fingerprint/integrity](https://gohugo.io/hugo-pipes/fingerprint/) check.
-
----
-
 ### Default Theme light/dark/auto
 
 ```yml
