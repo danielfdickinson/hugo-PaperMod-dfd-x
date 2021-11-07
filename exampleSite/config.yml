@@ -11,6 +11,8 @@ buildExpired: false
 enableEmoji: true
 # googleAnalytics: UA-123-45
 
+timeout: 50000
+
 minify:
     disableXML: true
     # minifyOutput: true
