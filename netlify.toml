@@ -3,7 +3,7 @@
   command = "hugo"
 
 [build.environment]
-  HUGO_VERSION = "0.88.1"
+  HUGO_VERSION = "0.89.1"
   TZ = "America/Toronto"
   HUGO_MODULE_REPLACEMENTS = "github.com/danielfdickinson/adityatelange-hugo-PaperMod -> ../../../repo"
 #  GIT_LFS_ENABLED = "1"
@@ -18,8 +18,16 @@
 [context.branch-deploy]
   command = "_scripts/hugo-build \"$DEPLOY_PRIME_URL\""
 
+[dev]
+  command = "_scripts/hugo-serve"
+  targetPort = 1313
+  framework = "#custom"
+
 [[plugins]]
   package = "netlify-plugin-hugo-cache-resources"
+
+  [plugins.inputs]
+    srcdir = "exampleSite"
 
 [[plugins]]
   package = "netlify-plugin-html-validate"
@@ -46,8 +54,3 @@
     removeScriptTypeAttributes = true
     removeTypeLinkTypeAttributes = true
     useShortDocType = false
-
-[dev]
-  command = "_scripts/hugo-serve"
-  targetPort = 1313
-  framework = "#custom"
